@@ -1,31 +1,43 @@
 import React, { useState } from 'react';
 import {
-    Box,
-    FormControl,
-    InputLabel,
-    Input,
-    Button,
-    Typography
+    Box
 } from '@material-ui/core';
 
+import Signup from './Signup';
+import Login from './Login';
+
 const Portal = () => {
+    const [showLogin, setShowLogin] = useState(true);
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [cpassword, setCPassword] = useState();
+
+    const togglePortal = () => { setShowLogin(!showLogin) };
+    const submitLogin = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}`) };
+    const submitSignup = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}\nconfirm password: ${cpassword}`) }
+
     return (
-        <Box bgcolor="secondary.main" width="25vw" height="50vh">
-            <Typography variant="h4">Sign Up</Typography>
-            <form>
-                <FormControl>
-                    <InputLabel htmlFor="username">Username</InputLabel>
-                    <Input id="username" value="username" onChange={(e) => console.log(e.target.value)} />
-                </FormControl>
-                <br />
-                <FormControl>
-                    <InputLabel htmlFor="password">Password</InputLabel>
-                    <Input id="password" value="password" onChange={(e) => console.log(e.target.value)} />
-                </FormControl>
-                <br />
-                <Button variant="contained">Sign Up</Button>
-            </form>
-        </Box>
+        <div>
+            <Box bgcolor="secondary.main" width="25vw" height="50vh">
+                {showLogin
+                    ? <Login 
+                        username={username}
+                        setUsername={setUsername}
+                        setPassword={setPassword}
+                        togglePortal={togglePortal}
+                        submitForm={submitLogin}
+                    />
+                    : <Signup 
+                    username={username}
+                    setUsername={setUsername}
+                    setPassword={setPassword}
+                    setCPassword={setCPassword}
+                    togglePortal={togglePortal}
+                    submitForm={submitSignup}
+                    />
+                }
+            </Box>
+        </div>
     )
 }
 
