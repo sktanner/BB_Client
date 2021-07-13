@@ -39,3 +39,5 @@ function character() {
         })
     })
 }
+
+export default Character;
