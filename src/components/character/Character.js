@@ -28,7 +28,7 @@ function character() {
         headers: newHeaders({
             "Content-Type": "application/json",
             "Authorization": `Bearer ${accessToken}`
-        }),
+        })
         .then(response => response.json())
         .then(data => {
             console.log(data)
