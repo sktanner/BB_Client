@@ -135,10 +135,10 @@
         paddingRight: theme.spacing(1),
       },
       highlight:
-        theme.palette.type === 'light'
+        theme.palette.type === 'dark'
           ? {
               color: theme.palette.secondary.main,
-              backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+              backgroundColor: lighten(theme.palette.secondary.dark, 0.85),
             }
           : {
               color: theme.palette.text.primary,
@@ -152,6 +152,18 @@
     const EnhancedTableToolbar = (props) => {
       const classes = useToolbarStyles();
       const { numSelected } = props;
+      let character
+
+      const deleteChar = (character) => {
+        fetch(`http://localhost:3000/character/${character.id}`, {
+          method: 'DELETE',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': props.token
+          })
+        })
+        .then(() => props.fetchCharacters())
+      }
     
       return (
         <Toolbar
@@ -171,7 +183,7 @@
     
           {numSelected > 0 ? (
             <Tooltip title="Delete">
-              <IconButton aria-label="delete">
+              <IconButton aria-label="delete" onClick={() => {deleteChar(character)}}>
                 <DeleteIcon />
               </IconButton>
             </Tooltip>
@@ -321,12 +333,12 @@
                           <TableCell component="th" id={labelId} scope="row" padding="none">
                             {row.name}
                           </TableCell>
-                          <TableCell align="right">{row.race}</TableCell>
-                          <TableCell align="right">{row.gender}</TableCell>
-                          <TableCell align="right">{row.age}</TableCell>
-                          <TableCell align="right">{row.alignment}</TableCell>
-                          <TableCell align="right">{row.profession}</TableCell>
-                          <TableCell align="right">{row.trait}</TableCell>
+                          <TableCell align="right">{row.character.race}</TableCell>
+                          <TableCell align="right">{row.character.gender}</TableCell>
+                          <TableCell align="right">{row.character.age}</TableCell>
+                          <TableCell align="right">{row.character.alignment}</TableCell>
+                          <TableCell align="right">{row.character.profession}</TableCell>
+                          <TableCell align="right">{row.character.trait}</TableCell>
                         </TableRow>
                       );
                     })}
