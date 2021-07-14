@@ -333,12 +333,12 @@
                           <TableCell component="th" id={labelId} scope="row" padding="none">
                             {row.name}
                           </TableCell>
-                          <TableCell align="right">{row.character.race}</TableCell>
-                          <TableCell align="right">{row.character.gender}</TableCell>
-                          <TableCell align="right">{row.character.age}</TableCell>
-                          <TableCell align="right">{row.character.alignment}</TableCell>
-                          <TableCell align="right">{row.character.profession}</TableCell>
-                          <TableCell align="right">{row.character.trait}</TableCell>
+                          <TableCell align="right">{row.race}</TableCell>
+                          <TableCell align="right">{row.gender}</TableCell>
+                          <TableCell align="right">{row.age}</TableCell>
+                          <TableCell align="right">{row.alignment}</TableCell>
+                          <TableCell align="right">{row.profession}</TableCell>
+                          <TableCell align="right">{row.trait}</TableCell>
                         </TableRow>
                       );
                     })}
