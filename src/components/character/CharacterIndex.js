@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { DataGrid } from '@material-ui/data-grid'
 import CharacterTable from './CharacterTable'
 import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'

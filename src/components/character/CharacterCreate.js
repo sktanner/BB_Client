@@ -1,43 +1,90 @@
 import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles'
+import {
+    FormControl,
+    InputLabel,
+    Input,
+    Button,
+    Typography,
+    Link
+} from '@material-ui/core';
+
 
 const CharacterCreate = (props) => {
-    let  name = document.getElementById('name').value;
-    let race = document.getElementById('race').value;
-    let gender = document.getElementById('gender').value;
-    let age = document.getElementById('age').value;
-    let alignment = document.getElementById('alignment').value;
-    let profession = document.getElementById('profession').value;
-    let trait = document.getElementById('trait').value;
-    //let owner = document.getElementById('owner').value;
+    const [name, setName] = useState('')
+    const [race, setRace] = useState('')
+    const [gender, setGender] = useState('')
+    const [age, setAge] = useState('')
+    const [alignment, setAlignment] = useState('')
+    const [profession, setProfession] = useState('')
+    const [trait, setTrait] = useState('')
 
-    let newCharacter = {
-        character: {
-            name: name,
-            race: race,
-            gender: gender,
-            age: age,
-            alignment: alignment,
-            profession: profession,
-            trait: trait,
-            //owner: owner
+    const useStyles = makeStyles(() => ({
+        root: {
+            marginBottom: '10px',
+            color: 'white',
+        },
+        button: {
+            marginTop: '10px',
         }
+        
+    }))
+
+    const classes = useStyles();
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(name, race, gender, age, alignment, profession, trait)
+        fetch('http://localhost:3000/character/create', {
+            method: 'POST',
+            body: JSON.stringify({
+                character: {
+                    name: name,
+                    race: race,
+                    gender: gender,
+                    age: age,
+                    alignment: alignment,
+                    profession: profession,
+                    trait: trait,
+                }
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+            })
+        }).then((res) => res.json())
+            .then((logData) => {
+                console.log(logData)
+                setName('')
+                setRace('')
+                setGender('')
+                setAge('')
+                setAlignment('')
+                setProfession('')
+                setTrait('')
+                props.fetchCharacters()
+            })
     }
 
-    fetch(`http://localhost:5432/create`, {
-        method: 'POST',
-        headers: newHeaders({
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${accessToken}`
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            displayMine()
-        })
-        .catch(err => {
-            console.error(err)
-        })
-    })
+
+    return (
+        <div>
+        <h1>Create</h1>
+        <form onSubmit={handleSubmit}>
+            <FormControl className={classes.root}>
+                <InputLabel htmlFor="name">Name</InputLabel>
+                <Input id="name"  value={name} onChange={(e) => setName(e.target.value)}/>
+            </FormControl>
+            <FormControl className={classes.root}>
+                <InputLabel htmlFor="race">Race</InputLabel>
+                <Input id="name"  value={race} onChange={(e) => setRace(e.target.value)}/>
+            </FormControl>
+            <Button type="submit" className={classes.button} variant="contained">Submit</Button>
+            </form>
+        </div>
+    )
+
 }
+
 
 export default CharacterCreate
