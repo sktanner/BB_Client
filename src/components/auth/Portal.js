@@ -30,13 +30,12 @@ const Portal = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [cPassword, setCPassword] = useState('');
 
     const togglePortal = () => { setShowLogin(!showLogin) };
 
-    const submitLogin = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}`) };
+    // const submitLogin = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}`) };
 
-    const submitSignup = () => { console.log(`Form is sent!\nusername: ${username}\nemail: ${email}\npassword: ${password}\nconfirm password: ${cPassword}`) }
+    // const submitSignup = () => { console.log(`Form is sent!\nusername: ${username}\nemail: ${email}\npassword: ${password}\nconfirm password: ${cPassword}`) }
 
     return (
         <Grid container className={classes.root}>
@@ -48,20 +47,18 @@ const Portal = (props) => {
                         setUsername={setUsername}
                         setPassword={setPassword}
                         togglePortal={togglePortal}
-                        submitForm={submitLogin}
+                        // submitForm={submitLogin}
                         updateToken={props.updateToken}
                     />
                     : <Signup
                         username={username}
                         email={email}
                         password={password}
-                        cPassword={cPassword}
                         setUsername={setUsername}
                         setEmail={setEmail}
                         setPassword={setPassword}
-                        setCPassword={setCPassword}
                         togglePortal={togglePortal}
-                        submitForm={submitSignup}
+                        // submitForm={submitSignup}
                         updateToken={props.updateToken}
                     />
                 }

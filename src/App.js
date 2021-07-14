@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Navbar from './components/navigation/Navbar';
 import Portal from './components/auth/Portal';
-import CharacterTable from './components/character/Table';
+// import CharacterTable from './components/character/Table';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -30,7 +30,7 @@ function App() {
       <Navbar clickLogout={clearToken} token={sessionToken} />
       <Portal updateToken={updateToken} />
 
-      <CharacterTable />
+      {/* <CharacterTable /> */}
     </div>
   );
 }
