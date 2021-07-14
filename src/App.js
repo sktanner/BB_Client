@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Navbar from './components/navigation/Navbar';
 import Portal from './components/auth/Portal';
+
 import CharacterIndex from './components/character/CharacterIndex';
 // import CharacterTable from './components/character/CharacterTable';
 
@@ -31,8 +32,8 @@ function App() {
       <Navbar clickLogout={clearToken} token={sessionToken} />
       <Portal updateToken={updateToken} />
 
-      {/* <CharacterTable /> */}
       <CharacterIndex />
+
     </div>
   );
 }
