@@ -47,10 +47,10 @@ const Login = (props) => {
                 <br />
                 <FormControl className={classes.root}>
                     <InputLabel htmlFor="password">Password</InputLabel>
-                    <Input name="password" value={props.password} onChange={(e) => props.setPassword(e.target.value)} />
+                    <Input type="password" name="password" value={props.password} onChange={(e) => props.setPassword(e.target.value)} />
                 </FormControl>
                 <br />
-                <Button type="submit" className={classes.button} variant="contained" onClick={props.submitLogin}>Login</Button>
+                <Button type="submit" className={classes.button} variant="contained">Login</Button>
                 <br />
                 <Link href="#" color="inherit" variant="body2" onClick={props.togglePortal}>Don't have an account?</Link>
             </form>

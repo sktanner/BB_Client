@@ -19,7 +19,8 @@ const Portal = (props) => {
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "rgba(230,1,10,0.9)",
-            minHeight: "50vh",
+            borderRadius: "1rem",
+            minHeight: "60vh",
         },
     }))
 
@@ -28,15 +29,17 @@ const Portal = (props) => {
     const [showLogin, setShowLogin] = useState(true);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [cPassword, setCPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     const togglePortal = () => { setShowLogin(!showLogin) };
-    const submitLogin = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}`) };
-    const submitSignup = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}\nconfirm password: ${cPassword}`) }
+
+    // const submitLogin = () => { console.log(`Form is sent!\nusername: ${username}\npassword: ${password}`) };
+
+    // const submitSignup = () => { console.log(`Form is sent!\nusername: ${username}\nemail: ${email}\npassword: ${password}\nconfirm password: ${cPassword}`) }
 
     return (
         <Grid container className={classes.root}>
-            <Grid item xs={4} sm={3} className={classes.gridItem}>
+            <Grid item xs={5} sm={3} className={classes.gridItem}>
                 {showLogin
                     ? <Login
                         username={username}
@@ -44,18 +47,18 @@ const Portal = (props) => {
                         setUsername={setUsername}
                         setPassword={setPassword}
                         togglePortal={togglePortal}
-                        submitForm={submitLogin}
+                        // submitForm={submitLogin}
                         updateToken={props.updateToken}
                     />
                     : <Signup
                         username={username}
+                        email={email}
                         password={password}
-                        cPassword={cPassword}
                         setUsername={setUsername}
+                        setEmail={setEmail}
                         setPassword={setPassword}
-                        setCPassword={setCPassword}
                         togglePortal={togglePortal}
-                        submitForm={submitSignup}
+                        // submitForm={submitSignup}
                         updateToken={props.updateToken}
                     />
                 }

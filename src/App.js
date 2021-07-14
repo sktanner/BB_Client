@@ -4,8 +4,13 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/navigation/Navbar';
 import Portal from './components/auth/Portal';
 
+<<<<<<< HEAD
 // import CharacterTable from './components/character/Table';
 //0f7756f76f26540951a6290c223f4e0ecc7113ed
+=======
+import CharacterIndex from './components/character/CharacterIndex';
+// import CharacterTable from './components/character/CharacterTable';
+>>>>>>> 0ebc78753ed6a331dd4afedb187f46a42bd0c812
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -29,10 +34,11 @@ function App() {
   
   return (
     <div className="App">
-      <Navbar clickLogout={clearToken} />
+      <Navbar clickLogout={clearToken} token={sessionToken} />
       <Portal updateToken={updateToken} />
 
-      {/* <CharacterTable /> */}
+      <CharacterIndex />
+
     </div>
   );
 }
