@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 
 import Navbar from './components/navigation/Navbar';
 import Portal from './components/auth/Portal';
-<<<<<<< HEAD
-import Character from './components/character/Character';
-=======
+
 // import CharacterTable from './components/character/Table';
->>>>>>> 0f7756f76f26540951a6290c223f4e0ecc7113ed
+//0f7756f76f26540951a6290c223f4e0ecc7113ed
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
