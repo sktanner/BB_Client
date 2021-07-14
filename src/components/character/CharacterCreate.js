@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const character = (props) => {
+const CharacterCreate = (props) => {
     let  name = document.getElementById('name').value;
     let race = document.getElementById('race').value;
     let gender = document.getElementById('gender').value;
@@ -40,4 +40,4 @@ const character = (props) => {
     })
 }
 
-export default character
+export default CharacterCreate
