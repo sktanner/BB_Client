@@ -28,14 +28,15 @@ function App() {
     localStorage.clear();
     setSessionToken('');
   }
+
+  const protectedView = () => {
+    return (sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken} /> : <Portal updateToken={updateToken} />)
+  }
   
   return (
     <div className="App">
       <Navbar clickLogout={clearToken} token={sessionToken} />
-      <Portal updateToken={updateToken} />
-
-      <CharacterIndex />
-
+      {protectedView()}
     </div>
   );
 }
