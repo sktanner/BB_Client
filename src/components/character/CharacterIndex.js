@@ -9,17 +9,17 @@ const CharacterIndex = (props) => {
     const [characterToUpdate, setCharacterToUpdate] = useState([])
 
     const fetchCharacters = () => {
-        fetch('http://localhost:3000/character', {
+        fetch('http://localhost:3000/character/', {
             method: 'GET',
-            headers: new Headers ({
+            headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }) .then( (res) => res.json())
-        .then((logData) => {
-            setCharacter(logData)
-            console.log(character);
-        })
+        }).then((res) => res.json())
+            .then((charData) => {
+                setCharacter(charData)
+                console.log(charData);
+            })
     }
 
     const editUpdateCharacter = (character) => {
@@ -39,12 +39,14 @@ const CharacterIndex = (props) => {
         fetchCharacters()
     }, [])
 
-    return(
+    return (
         <div>
             <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
-            <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token}/>
-            {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters}/> : <></>}
-    </div>
+
+            <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
+            
+            {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
+        </div>
     )
 }
 
