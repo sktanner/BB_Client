@@ -33,10 +33,10 @@
     }
     
     const rows = [
-      createData('Sarah', 'tabaxi', 'female', 'adult', 'chaotic good', 'monk', 'easily distracted'),
-      createData('Joe', 'minotaur', 'male', 'adult', 'lawful neutral', 'ranger', 'rich'),
-      createData('Kelly', 'elf', 'female', 'adult', 'lawful good', 'barbarian', 'bull-headed'),
-      createData('Aaron', 'halfling', 'male', 'adult', 'chaotic neutral', 'rogue', 'takes all the loot'),
+      // createData('Sarah', 'tabaxi', 'female', 'adult', 'chaotic good', 'monk', 'easily distracted'),
+      // createData('Joe', 'minotaur', 'male', 'adult', 'lawful neutral', 'ranger', 'rich'),
+      // createData('Kelly', 'elf', 'female', 'adult', 'lawful good', 'barbarian', 'bull-headed'),
+      // createData('Aaron', 'halfling', 'male', 'adult', 'chaotic neutral', 'rogue', 'takes all the loot'),
     //   Link to data for created characters
     ];
     
@@ -226,7 +226,7 @@
       },
     }));
     
-    export default function EnhancedTable() {
+    export default function EnhancedTable(props) {
       const classes = useStyles();
       const [order, setOrder] = React.useState('asc');
       const [orderBy, setOrderBy] = React.useState('name');
@@ -317,7 +317,7 @@
                       return (
                         <TableRow
                           hover
-                          onClick={(event) => handleClick(event, row.name)}
+                          onClick={(event) => handleClick(event, props.character.name)}
                           role="checkbox"
                           aria-checked={isItemSelected}
                           tabIndex={-1}
@@ -333,7 +333,7 @@
                           <TableCell component="th" id={labelId} scope="row" padding="none">
                             {row.name}
                           </TableCell>
-                          <TableCell align="right">{row.race}</TableCell>
+                          <TableCell align="right">{props.character.race}</TableCell>
                           <TableCell align="right">{row.gender}</TableCell>
                           <TableCell align="right">{row.age}</TableCell>
                           <TableCell align="right">{row.alignment}</TableCell>
