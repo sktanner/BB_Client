@@ -20,6 +20,7 @@ import {
 
 const CharacterCreate = (props) => {
     const [name, setName] = useState('')
+    const [location, setLocation] = useState('')
     const [race, setRace] = useState('')
     const [gender, setGender] = useState('')
     const [age, setAge] = useState('')
@@ -42,12 +43,13 @@ const CharacterCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(name, race, gender, age, alignment, profession, trait)
+        console.log(name, location, race, gender, age, alignment, profession, trait)
         fetch('http://localhost:3000/character/create', {
             method: 'POST',
             body: JSON.stringify({
                 character: {
                     name: name,
+                    location: location,
                     race: race,
                     gender: gender,
                     age: age,
@@ -64,6 +66,7 @@ const CharacterCreate = (props) => {
             .then((logData) => {
                 console.log(logData)
                 setName('')
+                setLocation('')
                 setRace('')
                 setGender('')
                 setAge('')
