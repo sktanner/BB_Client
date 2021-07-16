@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import CharacterTable from './CharacterTable'
+import EnhancedTable from './CharacterTable'
 import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
 
@@ -18,13 +18,13 @@ const CharacterIndex = (props) => {
         }).then((res) => res.json())
             .then((charData) => {
                 setCharacter(charData)
-                console.log(charData);
+                // console.log(charData);
             })
     }
 
     const editUpdateCharacter = (character) => {
         setCharacterToUpdate(character)
-        console.log(character);
+        // console.log(character);
     }
 
     const updateOn = () => {
@@ -43,7 +43,7 @@ const CharacterIndex = (props) => {
         <div>
             <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
 
-            <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
+            <EnhancedTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
             
             {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
         </div>
