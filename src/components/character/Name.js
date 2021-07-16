@@ -1,9 +1,10 @@
+import { Button } from '@material-ui/core';
 import React from 'react';
 import { useState } from 'react';
 
-let adjective = ['Angry', 'Gifted', 'Brave', 'Feared'];
+//let adjective = ['Angry', 'Gifted', 'Brave', 'Feared'];
 
-var randomAdjective = adjective[Math.floor(Math.random() * answers.length)];
+//var randomAdjective = adjective[Math.floor(Math.random() * answers.length)];
 
 const Name = (props) => {
 
@@ -11,7 +12,7 @@ const Name = (props) => {
 
     const fetcher = () => {
         fetch('https://api.randomuser.me/')
-            .then(res => res.person.name.first.json())
+            .then(res => res.json())
             .then(json => {
                 setRandName(json);
                 console.log(json);
@@ -21,7 +22,8 @@ const Name = (props) => {
 
     return (
         <div>
-            <div>{randName} the (randomAdjective)</div>
+            {/* <Button size="medium" variant="container" onClick={fetcher}>Test</Button>
+            {console.log(randName.results[0].name.first)} */}
         </div>
     )
 }

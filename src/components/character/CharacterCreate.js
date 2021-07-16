@@ -10,6 +10,7 @@ import {
     TextField,
     Container
 } from '@material-ui/core';
+import Name from './Name';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
   <TextField id="standard-basic" label="Standard" />
@@ -91,6 +92,8 @@ const CharacterCreate = (props) => {
                 <Input className={classes.root} id="name" value={race} onChange={(e) => setRace(e.target.value)}/>
             </FormControl>
             <Button type="submit" className={classes.button} variant="contained">Submit</Button>
+            <br />
+            <Name />
             </form>
         </div>
     )
