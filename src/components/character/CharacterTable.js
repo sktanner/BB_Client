@@ -30,6 +30,7 @@
     
    
     
+
     
     function descendingComparator(a, b, orderBy) {
       if (b[orderBy] < a[orderBy]) {
@@ -217,11 +218,15 @@
       },
     }));
     
+
     export default function EnhancedTable() {
       function createData(name, race, gender, age, alignment, profession, trait) {
         return { name, race, gender, age, alignment, profession, trait };
       }
 
+
+
+    export default function EnhancedTable(props) {
 
       const classes = useStyles();
       const [order, setOrder] = React.useState('asc');
@@ -325,7 +330,7 @@
                       return (
                         <TableRow
                           hover
-                          onClick={(event) => handleClick(event, row.name)}
+                          onClick={(event) => handleClick(event, props.character.name)}
                           role="checkbox"
                           aria-checked={isItemSelected}
                           tabIndex={-1}
@@ -341,7 +346,7 @@
                           <TableCell component="th" id={labelId} scope="row" padding="none">
                             {row.name}
                           </TableCell>
-                          <TableCell align="right">{row.race}</TableCell>
+                          <TableCell align="right">{props.character.race}</TableCell>
                           <TableCell align="right">{row.gender}</TableCell>
                           <TableCell align="right">{row.age}</TableCell>
                           <TableCell align="right">{row.alignment}</TableCell>
