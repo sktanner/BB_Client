@@ -65,7 +65,7 @@ const CharacterCreate = (props) => {
             })
         }).then((res) => res.json())
             .then((logData) => {
-                console.log(logData)
+                // console.log(logData)
                 setName('')
                 setLocation('')
                 setRace('')
@@ -97,7 +97,6 @@ const CharacterCreate = (props) => {
             </form>
         </div>
     )
-
 }
 
 
