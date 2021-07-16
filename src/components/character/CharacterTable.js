@@ -28,17 +28,8 @@
     
 
     
-    function createData(name, race, gender, age, alignment, profession, trait) {
-      return { name, race, gender, age, alignment, profession, trait };
-    }
+   
     
-    const rows = [
-      createData('Sarah', 'tabaxi', 'female', 'adult', 'chaotic good', 'monk', 'easily distracted'),
-      createData('Joe', 'minotaur', 'male', 'adult', 'lawful neutral', 'ranger', 'rich'),
-      createData('Kelly', 'elf', 'female', 'adult', 'lawful good', 'barbarian', 'bull-headed'),
-      createData('Aaron', 'halfling', 'male', 'adult', 'chaotic neutral', 'rogue', 'takes all the loot'),
-    //   Link to data for created characters
-    ];
     
     function descendingComparator(a, b, orderBy) {
       if (b[orderBy] < a[orderBy]) {
@@ -227,6 +218,11 @@
     }));
     
     export default function EnhancedTable() {
+      function createData(name, race, gender, age, alignment, profession, trait) {
+        return { name, race, gender, age, alignment, profession, trait };
+      }
+
+
       const classes = useStyles();
       const [order, setOrder] = React.useState('asc');
       const [orderBy, setOrderBy] = React.useState('name');
@@ -234,6 +230,7 @@
       const [page, setPage] = React.useState(0);
       const [dense, setDense] = React.useState(false);
       const [rowsPerPage, setRowsPerPage] = React.useState(5);
+      const [rows, setRows] = React.useState([])
     
       const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -284,6 +281,17 @@
       };
     
       const isSelected = (name) => selected.indexOf(name) !== -1;
+
+    React.useEffect(()=>{
+      setRows([
+        createData('Sarah', 'tabaxi', 'female', 'adult', 'chaotic good', 'monk', 'easily distracted'),
+        createData('Joe', 'minotaur', 'male', 'adult', 'lawful neutral', 'ranger', 'rich'),
+        createData('Kelly', 'elf', 'female', 'adult', 'lawful good', 'barbarian', 'bull-headed'),
+        createData('Kelly', 'elf', 'female', 'adult', 'lawful good', 'barbarian', 'bull-headed'),
+        createData('Aaron', 'halfling', 'male', 'adult', 'chaotic neutral', 'rogue', 'takes all the loot'),
+      ])
+  
+    }, [])
     
       const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
     
