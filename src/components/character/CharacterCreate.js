@@ -10,6 +10,7 @@ import {
     TextField,
     Container
 } from '@material-ui/core';
+import Name from './Name';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
   <TextField id="standard-basic" label="Standard" />
@@ -82,15 +83,17 @@ const CharacterCreate = (props) => {
         <div>
         <h1>Create</h1>
         <form onSubmit={handleSubmit}>
-            <FormControl className={classes.root}>
-                <InputLabel htmlFor="name">Name</InputLabel>
-                <Input id="name"  value={name} onChange={(e) => setName(e.target.value)}/>
+            <FormControl>
+                <InputLabel htmlFor="name" className={classes.root}>Name</InputLabel>
+                <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)}/>
             </FormControl>
-            <FormControl className={classes.root}>
-                <InputLabel htmlFor="race">Race</InputLabel>
-                <Input id="name"  value={race} onChange={(e) => setRace(e.target.value)}/>
+            <FormControl>
+                <InputLabel htmlFor="race" className={classes.root}>Race</InputLabel>
+                <Input className={classes.root} id="name" value={race} onChange={(e) => setRace(e.target.value)}/>
             </FormControl>
             <Button type="submit" className={classes.button} variant="contained">Submit</Button>
+            <br />
+            <Name />
             </form>
         </div>
     )
