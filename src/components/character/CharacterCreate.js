@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles'
-import {
-    FormControl,
-    InputLabel,
-    Input,
-    Button,
-    Typography,
-    Link,
-    TextField,
-    Container
-} from '@material-ui/core';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+// import { makeStyles } from '@material-ui/core/styles'
+// import {
+//     FormControl,
+//     InputLabel,
+//     Input,
+//     Button,
+//     Typography,
+//     Link,
+//     TextField,
+//     Container,
+//     Select,
+//     MenuItem
+// } from '@material-ui/core';
 import Name from './Name';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
@@ -29,18 +32,18 @@ const CharacterCreate = (props) => {
     const [profession, setProfession] = useState('')
     const [trait, setTrait] = useState('')
 
-    const useStyles = makeStyles(() => ({
-        root: {
-            marginBottom: '10px',
-            color: 'white',
-        },
-        button: {
-            marginTop: '10px',
-        }
+    // const useStyles = makeStyles(() => ({
+    //     root: {
+    //         marginBottom: '10px',
+    //         color: 'white',
+    //     },
+    //     button: {
+    //         marginTop: '10px',
+    //     }
         
-    }))
+    // }))
 
-    const classes = useStyles();
+    // const classes = useStyles();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -78,26 +81,100 @@ const CharacterCreate = (props) => {
             })
     }
 
-
     return (
         <div>
-        <h1>Create</h1>
-        <form onSubmit={handleSubmit}>
-            <FormControl>
-                <InputLabel htmlFor="name" className={classes.root}>Name</InputLabel>
-                <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)}/>
-            </FormControl>
-            <FormControl>
-                <InputLabel htmlFor="race" className={classes.root}>Race</InputLabel>
-                <Input className={classes.root} id="name" value={race} onChange={(e) => setRace(e.target.value)}/>
-            </FormControl>
-            <Button type="submit" className={classes.button} variant="contained">Submit</Button>
-            <br />
-            <Name />
-            </form>
+            <h3>Create a Character</h3>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label htmlFor="name"/>
+                    <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="location"/>
+                    <Input name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="race"/>
+                    <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)}>
+                        <option></option>
+                        <option value="Dwarf">Dwarf</option>
+                        <option value="Elf">Elf</option>
+                        <option value="Human">Human</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="gender"/>
+                    <Input type="select" name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option></option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Nonbinary">Nonbinary</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="age"/>
+                    <Input type="select" name="age" value={age} onChange={(e) => setAge(e.target.value)}>
+                        <option></option>
+                        <option value="Child">Child</option>
+                        <option value="Young Adult">Young Adult</option>
+                        <option value="Adult">Adult</option>
+                        <option value="Elder">Elder</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="age"/>
+                    <Input type="select" name="alignment" value={alignment} onChange={(e) => setAlignment(e.target.value)}>
+                        <option></option>
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Neutral Good">Neutral Good</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="True Neutral">True Neutral</option>
+                        <option value="Chaotic Neutral">Chaotic Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="profession"/>
+                    <Input name="profession" placeholder="Profession" value={profession} onChange={(e) => setProfession(e.target.value)}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="trait"/>
+                    <Input name="trait" placeholder="Trait" value={trait} onChange={(e) => setTrait(e.target.value)}/>
+                </FormGroup>
+                <Button type="submit">Click to Submit</Button>
+            </Form>
         </div>
+
+
+
+
+        // <div>
+        // <h1>Create</h1>
+        // <form onSubmit={handleSubmit}>
+        //     <FormControl>
+        //         <InputLabel htmlFor="name" className={classes.root}>Name</InputLabel>
+        //         <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)}/>
+        //     </FormControl>
+        //     <FormControl>
+        //         <InputLabel htmlFor="location" className={classes.root}>Location</InputLabel>
+        //         <Input className={classes.root} id="location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+        //     </FormControl>
+        //     <FormControl>
+        //         <InputLabel htmlFor="race" className={classes.root}>Race</InputLabel>
+        //         <Select className={classes.root} id="race" value={races} onChange={(e) => setRace(e.target.value)}/>
+        //         <MenuItem value={Dwarf}>Dwarf</MenuItem>
+        //         <MenuItem value={Elf}>Elf</MenuItem>
+        //         <MenuItem value={Human}>Human</MenuItem>
+        //     </FormControl>
+        //     <Button type="submit" className={classes.button} variant="contained">Submit</Button>
+        //     <br />
+        //     <Name />
+        //     </form>
+        // </div>
     )
 }
-
 
 export default CharacterCreate
