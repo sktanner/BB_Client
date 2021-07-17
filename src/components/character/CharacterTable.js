@@ -21,6 +21,10 @@ const CharacterTable = (props) => {
                     <td>{character.location}</td>
                     <td>{character.race}</td>
                     <td>{character.gender}</td>
+                    <td>{character.age}</td>
+                    <td>{character.alignment}</td>
+                    <td>{character.profession}</td>
+                    <td>{character.trait}</td>
                     <td>
                         <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Update</Button>
                         <Button color="danger" onClick={() => {deleteCharacter(character)}}>Delete</Button>
@@ -34,13 +38,17 @@ const CharacterTable = (props) => {
     <>
     <h3>Characters</h3>
     <hr/>
-    <Table striped>
+    <Table striped id="charTable">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Location</th>
                 <th>Race</th>
                 <th>Gender</th>
+                <th>Age</th>
+                <th>Alignment</th>
+                <th>Profession</th>
+                <th>Trait</th>
             </tr>
         </thead>
         <tbody>

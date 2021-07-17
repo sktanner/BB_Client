@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Container, Col } from 'reactstrap'
 // import { makeStyles } from '@material-ui/core/styles'
 // import {
 //     FormControl,
@@ -82,37 +82,46 @@ const CharacterCreate = (props) => {
     }
 
     return (
-        <div>
-            <h3>Create a Character</h3>
+        <Container id="createTable">
+            <h3 id="createTitle">Create a Character</h3>
             <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <Label htmlFor="name"/>
+                <FormGroup row>
+                    <Label htmlFor="name" sm={4}>Name:</Label>
+                    <Col sm={8}>
                     <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="location"/>
+                <FormGroup row>
+                    <Label htmlFor="location" sm={4}>Location:</Label>
+                    <Col sm={8}>
                     <Input name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="race"/>
+                <FormGroup row>
+                    <Label htmlFor="race" sm={4}>Race:</Label>
+                    <Col sm={8}>
                     <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)}>
                         <option></option>
                         <option value="Dwarf">Dwarf</option>
                         <option value="Elf">Elf</option>
                         <option value="Human">Human</option>
                     </Input>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="gender"/>
+                <FormGroup row>
+                    <Label htmlFor="gender" sm={4}>Gender:</Label>
+                    <Col sm={8}>
                     <Input type="select" name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option></option>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
                         <option value="Nonbinary">Nonbinary</option>
                     </Input>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="age"/>
+                <FormGroup row>
+                    <Label htmlFor="age" sm={4}>Age:</Label>
+                    <Col sm={8}>
                     <Input type="select" name="age" value={age} onChange={(e) => setAge(e.target.value)}>
                         <option></option>
                         <option value="Child">Child</option>
@@ -120,9 +129,11 @@ const CharacterCreate = (props) => {
                         <option value="Adult">Adult</option>
                         <option value="Elder">Elder</option>
                     </Input>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="age"/>
+                <FormGroup row>
+                    <Label htmlFor="alignment" sm={4}>Alignment:</Label>
+                    <Col sm={8}>
                     <Input type="select" name="alignment" value={alignment} onChange={(e) => setAlignment(e.target.value)}>
                         <option></option>
                         <option value="Lawful Good">Lawful Good</option>
@@ -135,18 +146,25 @@ const CharacterCreate = (props) => {
                         <option value="Neutral Evil">Neutral Evil</option>
                         <option value="Chaotic Evil">Chaotic Evil</option>
                     </Input>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="profession"/>
+                <FormGroup row>
+                    <Label htmlFor="profession" sm={4}>Profession:</Label>
+                    <Col sm={8}>
                     <Input name="profession" placeholder="Profession" value={profession} onChange={(e) => setProfession(e.target.value)}/>
+                    </Col>
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="trait"/>
+                <FormGroup row>
+                    <Label htmlFor="trait" sm={4}>Trait:</Label>
+                    <Col sm={8}>
                     <Input name="trait" placeholder="Trait" value={trait} onChange={(e) => setTrait(e.target.value)}/>
+                    </Col>
                 </FormGroup>
-                <Button type="submit">Click to Submit</Button>
+                <div  class="text-center">
+                <Button type="submit" id="submit">Generate</Button>
+                </div>
             </Form>
-        </div>
+        </Container>
 
 
 
