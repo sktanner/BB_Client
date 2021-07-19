@@ -40,7 +40,7 @@ const CharacterCreate = (props) => {
     //     button: {
     //         marginTop: '10px',
     //     }
-        
+
     // }))
 
     // const classes = useStyles();
@@ -85,89 +85,92 @@ const CharacterCreate = (props) => {
         <Container id="createTable">
             <h3 id="createTitle">Create a Character</h3>
             <Form onSubmit={handleSubmit}>
+                {/* <FormGroup row>
+                    <Name />
+                </FormGroup> */}
                 <FormGroup row>
                     <Label htmlFor="name" sm={4}>Name:</Label>
                     <Col sm={8}>
-                    <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                        <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="location" sm={4}>Location:</Label>
                     <Col sm={8}>
-                    <Input name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+                        <Input name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="race" sm={4}>Race:</Label>
                     <Col sm={8}>
-                    <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)}>
-                        <option></option>
-                        <option value="Dragonborn">Dragonborn</option>
-                        <option value="Dwarf">Dwarf</option>
-                        <option value="Elf">Elf</option>
-                        <option value="Gnome">Gnome</option>
-                        <option value="Half-Elf">Half-Elf</option>
-                        <option value="Halfling">Halfling</option>
-                        <option value="Half-Orc">Half-Orc</option>
-                        <option value="Human">Human</option>
-                        <option value="Tiefling">Tiefling</option>
-                    </Input>
+                        <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)}>
+                            <option></option>
+                            <option value="Dragonborn">Dragonborn</option>
+                            <option value="Dwarf">Dwarf</option>
+                            <option value="Elf">Elf</option>
+                            <option value="Gnome">Gnome</option>
+                            <option value="Half-Elf">Half-Elf</option>
+                            <option value="Halfling">Halfling</option>
+                            <option value="Half-Orc">Half-Orc</option>
+                            <option value="Human">Human</option>
+                            <option value="Tiefling">Tiefling</option>
+                        </Input>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="gender" sm={4}>Gender:</Label>
                     <Col sm={8}>
-                    <Input type="select" name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
-                        <option></option>
-                        <option value="Female">Female</option>
-                        <option value="Male">Male</option>
-                        <option value="Nonbinary">Nonbinary</option>
-                    </Input>
+                        <Input type="select" name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                            <option></option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Nonbinary">Nonbinary</option>
+                        </Input>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="age" sm={4}>Age:</Label>
                     <Col sm={8}>
-                    <Input type="select" name="age" value={age} onChange={(e) => setAge(e.target.value)}>
-                        <option></option>
-                        <option value="Child">Child</option>
-                        <option value="Young Adult">Young Adult</option>
-                        <option value="Adult">Adult</option>
-                        <option value="Elder">Elder</option>
-                    </Input>
+                        <Input type="select" name="age" value={age} onChange={(e) => setAge(e.target.value)}>
+                            <option></option>
+                            <option value="Child">Child</option>
+                            <option value="Young Adult">Young Adult</option>
+                            <option value="Adult">Adult</option>
+                            <option value="Elder">Elder</option>
+                        </Input>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="alignment" sm={4}>Alignment:</Label>
                     <Col sm={8}>
-                    <Input type="select" name="alignment" value={alignment} onChange={(e) => setAlignment(e.target.value)}>
-                        <option></option>
-                        <option value="Lawful Good">Lawful Good</option>
-                        <option value="Neutral Good">Neutral Good</option>
-                        <option value="Chaotic Good">Chaotic Good</option>
-                        <option value="Lawful Neutral">Lawful Neutral</option>
-                        <option value="True Neutral">True Neutral</option>
-                        <option value="Chaotic Neutral">Chaotic Neutral</option>
-                        <option value="Lawful Evil">Lawful Evil</option>
-                        <option value="Neutral Evil">Neutral Evil</option>
-                        <option value="Chaotic Evil">Chaotic Evil</option>
-                    </Input>
+                        <Input type="select" name="alignment" value={alignment} onChange={(e) => setAlignment(e.target.value)}>
+                            <option></option>
+                            <option value="Lawful Good">Lawful Good</option>
+                            <option value="Neutral Good">Neutral Good</option>
+                            <option value="Chaotic Good">Chaotic Good</option>
+                            <option value="Lawful Neutral">Lawful Neutral</option>
+                            <option value="True Neutral">True Neutral</option>
+                            <option value="Chaotic Neutral">Chaotic Neutral</option>
+                            <option value="Lawful Evil">Lawful Evil</option>
+                            <option value="Neutral Evil">Neutral Evil</option>
+                            <option value="Chaotic Evil">Chaotic Evil</option>
+                        </Input>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="profession" sm={4}>Profession:</Label>
                     <Col sm={8}>
-                    <Input name="profession" placeholder="Profession" value={profession} onChange={(e) => setProfession(e.target.value)}/>
+                        <Input name="profession" placeholder="Profession" value={profession} onChange={(e) => setProfession(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="trait" sm={4}>Trait:</Label>
                     <Col sm={8}>
-                    <Input name="trait" placeholder="Trait" value={trait} onChange={(e) => setTrait(e.target.value)}/>
+                        <Input name="trait" placeholder="Trait" value={trait} onChange={(e) => setTrait(e.target.value)} />
                     </Col>
                 </FormGroup>
-                <div  class="text-center">
-                <Button type="submit" id="submit">Generate</Button>
+                <div class="text-center">
+                    <Button type="submit" id="submit">Generate</Button>
                 </div>
             </Form>
         </Container>
@@ -180,15 +183,15 @@ const CharacterCreate = (props) => {
         // <form onSubmit={handleSubmit}>
         //     <FormControl>
         //         <InputLabel htmlFor="name" className={classes.root}>Name</InputLabel>
-        //         <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)}/>
+        //         <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)} />
         //     </FormControl>
         //     <FormControl>
         //         <InputLabel htmlFor="location" className={classes.root}>Location</InputLabel>
-        //         <Input className={classes.root} id="location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+        //         <Input className={classes.root} id="location" value={location} onChange={(e) => setLocation(e.target.value)} />
         //     </FormControl>
         //     <FormControl>
         //         <InputLabel htmlFor="race" className={classes.root}>Race</InputLabel>
-        //         <Select className={classes.root} id="race" value={races} onChange={(e) => setRace(e.target.value)}/>
+        //         <Select className={classes.root} id="race" value={races} onChange={(e) => setRace(e.target.value)} />
         //         <MenuItem value={Dwarf}>Dwarf</MenuItem>
         //         <MenuItem value={Elf}>Elf</MenuItem>
         //         <MenuItem value={Human}>Human</MenuItem>

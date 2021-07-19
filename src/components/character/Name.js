@@ -2,10 +2,6 @@ import { Button } from '@material-ui/core';
 import React from 'react';
 import { useState } from 'react';
 
-//let adjective = ['Angry', 'Gifted', 'Brave', 'Feared'];
-
-//var randomAdjective = adjective[Math.floor(Math.random() * answers.length)];
-
 const Name = (props) => {
 
     const [randName, setRandName] = useState();
@@ -22,8 +18,10 @@ const Name = (props) => {
 
     return (
         <div>
-            {/* <Button size="medium" variant="container" onClick={fetcher}>Test</Button>
-            {console.log(randName.results[0].name.first)} */}
+            <div class="text-center">
+                <Button type="submit" id="submit" onClick={fetcher}>Random Name</Button>
+            </div>
+            {console.log(randName.results[0].name.first)}
         </div>
     )
 }
