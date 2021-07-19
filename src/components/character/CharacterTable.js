@@ -36,8 +36,6 @@ const CharacterTable = (props) => {
 
   return(
     <>
-    <h3>Characters</h3>
-    <hr/>
     <Table striped id="charTable">
         <thead>
             <tr>
