@@ -40,7 +40,7 @@ const CharacterIndex = (props) => {
     }, [])
 
     return (
-        <div>
+        <div id="container">
             <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
 
             <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
