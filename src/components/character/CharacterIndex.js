@@ -6,6 +6,7 @@ import CharacterTable from './CharacterTable'
 import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
 import CharacterCard from './Card'
+import CharacterDisplay from './Character';
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({
@@ -57,16 +58,15 @@ const CharacterIndex = (props) => {
         <>
         <div id="container">
             <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
-</div>
+
+            <CharacterDisplay character={character} />
+        </div>
             <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
 
             {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
 
             <br />
             
-            
-
-        
 
         <Grid container spacing={4} className={classes.gridContainer} >
                 <Grid item xs={12} sm={6} md={4}>
