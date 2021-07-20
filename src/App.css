@@ -36,3 +36,8 @@
   background-color: whitesmoke;
   max-width: 500px;
 }
+
+#display {
+  color: black;
+  list-style: none;
+}
