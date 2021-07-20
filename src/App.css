@@ -15,15 +15,17 @@
   flex-direction: row;
   margin-top: 100px;
   margin-bottom: 50px;
-  
 }
 
 #createTable {
-  background-color: gray;
+  background-color: whitesmoke;
+  color: black;
   width: 400px;
   text-align: left;
   font-size: calc(10px + 2vmin);
   margin-right: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 #createTitle {
@@ -31,6 +33,6 @@
 }
 
 #charTable {
-  background-color: white;
+  background-color: whitesmoke;
   max-width: 500px;
 }

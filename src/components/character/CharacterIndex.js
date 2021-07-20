@@ -54,16 +54,21 @@ const CharacterIndex = (props) => {
     }, [])
 
     return (
+        <>
         <div id="container">
             <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
-
+</div>
             <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
 
             {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
 
             <br />
             
-            <Grid container spacing={4} className={classes.gridContainer} >
+            
+
+        
+
+        <Grid container spacing={4} className={classes.gridContainer} >
                 <Grid item xs={12} sm={6} md={4}>
                     <CharacterCard />
                 </Grid>
@@ -77,8 +82,7 @@ const CharacterIndex = (props) => {
                     <CharacterCard />
                 </Grid>
             </Grid>
-
-        </div>
+        </>
     )
 }
 

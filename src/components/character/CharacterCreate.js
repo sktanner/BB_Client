@@ -84,6 +84,7 @@ const CharacterCreate = (props) => {
     return (
         <Container id="createTable">
             <h3 id="createTitle">Create a Character</h3>
+            <hr />
             <Form onSubmit={handleSubmit}>
                 {/* <FormGroup row>
                     <Name />
@@ -170,7 +171,7 @@ const CharacterCreate = (props) => {
                     </Col>
                 </FormGroup>
                 <div class="text-center">
-                    <Button type="submit" id="submit">Generate</Button>
+                    <Button type="submit" color="danger">Generate</Button>
                 </div>
             </Form>
         </Container>
