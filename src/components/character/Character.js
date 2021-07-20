@@ -1,31 +1,31 @@
 import React from 'react'
-import {Card} from 'reactstrap'
+import { Card } from 'reactstrap'
 
 const CharacterDisplay = (props) => {
 
-    const CharacterDisplayMap = () => {
-        console.log(props.character);
-            return props.character.map((character, index) => {
-                return(
-                    <ul key={index}>
-                        <li>{character.name}</li>
-                        <li>{character.location}</li>
-                        <li>{character.race}</li>
-                        <li>{character.gender}</li>
-                        <li>{character.age}</li>
-                        <li>{character.alignment}</li>
-                        <li>{character.profession}</li>
-                        <li>{character.trait}</li>
-                    </ul>
-                )
-            })
-      }
+    const CharacterDisplayCurrent = () => {
+        let charLength = props.character.length;
+        if (charLength != 0) {
+            return (
+                <ul>
+                    <li>{props.character[charLength - 1].name}</li>
+                    <li>{props.character[charLength - 1].location}</li>
+                    <li>{props.character[charLength - 1].race}</li>
+                    <li>{props.character[charLength - 1].gender}</li>
+                    <li>{props.character[charLength - 1].age}</li>
+                    <li>{props.character[charLength - 1].alignment}</li>
+                    <li>{props.character[charLength - 1].profession}</li>
+                    <li>{props.character[charLength - 1].trait}</li>
+                </ul>
+            )
+        }
+    }
 
-      return(
+    return (
         <>
-        <Card id="display">
-                {CharacterDisplayMap()}
-        </Card>
+            <Card id="display">
+                {CharacterDisplayCurrent()}
+            </Card>
         </>
     )
 
