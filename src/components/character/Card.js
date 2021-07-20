@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
   const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
+      backgroundColor: 'whitesmoke',
     },
     media: {
       height: 0,

@@ -107,7 +107,7 @@ const CharacterEdit = (props) => {
                         <Label htmlFor="trait">Edit Trait:</Label>
                             <Input name="trait" placeholder="Trait" value={editTrait} onChange={(e) => setEditTrait(e.target.value)} />
                     </FormGroup>
-                    <Button type="submit">Update the character!</Button>
+                    <Button type="submit" color="warning">Update</Button>
                 </Form>
             </ModalBody>
         </Modal>
