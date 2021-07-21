@@ -18,7 +18,7 @@
 }
 
 #createTable {
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
   width: 400px;
   text-align: left;
@@ -33,11 +33,15 @@
 }
 
 #charTable {
-  background-color: whitesmoke;
+  background-color: white;
   max-width: 500px;
 }
 
 #display {
   color: black;
   list-style: none;
+}
+
+#image {
+  height: 400px;
 }
