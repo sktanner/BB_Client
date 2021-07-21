@@ -26,6 +26,7 @@ const CharacterIndex = (props) => {
     const [updateActive, setUpdateActive] = useState(false)
     const [characterToUpdate, setCharacterToUpdate] = useState([])
     const [view, setView] = useState(true)
+    const [toggleBtnMsg, setToggleBtnMsg] = useState('Switch to Table View')
 
     const fetchCharacters = () => {
         fetch('http://localhost:3000/character/', {
@@ -58,7 +59,14 @@ const CharacterIndex = (props) => {
         fetchCharacters()
     }, [])
 
-    const changeView = () => { setView(!view) }
+    const changeView = () => { 
+        setView(!view);
+        if (view === false) {
+            setToggleBtnMsg('Switch to Table View')
+        } else {
+            setToggleBtnMsg('Switch to Card View')
+        }
+    }
 
     return (
         <>
@@ -68,7 +76,7 @@ const CharacterIndex = (props) => {
                 <CharacterDisplay character={character} />
             </div>
             <Button variant="contained" onClick={changeView}>
-                Switch to Table View
+                {toggleBtnMsg}
             </Button>
             {view === true
                 ?
