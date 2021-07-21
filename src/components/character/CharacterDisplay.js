@@ -37,6 +37,13 @@ const CharacterDisplay = (props) => {
             const resources = {
                 Female_Dragonborn: 'Dragonborn.png',
                 Female_Dwarf: 'Female_Dwarf.png',
+                // Female_Elf: 'Female_Elf.png',
+                // Female_Gnome: 'Female_Gnome.png',
+                // Female_HalfElf: 'Female_HalfElf.png',
+                // Female_Halfling: 'Female_Halfling.png',
+                // Female_HalfOrc: 'Female_HalfOrc.png',
+                // Female_Human: 'Female_Human.png',
+                // Female_Tiefling: 'Female_Tiefling.png',
                 Default: ''
             }
 
