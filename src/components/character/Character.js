@@ -1,10 +1,13 @@
-import React from 'react'
-import { Card } from 'reactstrap'
+import { React, useEffect } from 'react'
+import { Card, CardImg } from 'reactstrap'
+import { useState } from 'react'
 
 const CharacterDisplay = (props) => {
+    const [isLoaded, setIsLoaded] = useState()
+    const [image, setImage] = useState()
 
     const CharacterDisplayCurrent = () => {
-        let charLength = props.character.length;
+        let charLength = props.character.length
         if (charLength != 0) {
             return (
                 <ul>
@@ -21,10 +24,42 @@ const CharacterDisplay = (props) => {
         }
     }
 
+    const CharacterDisplayImage = () => {
+        let charLength = props.character.length
+        if (charLength != 0) {
+            setIsLoaded(true)
+
+            let imgGender = props.character[charLength - 1].gender
+            let imgRace = props.character[charLength - 1].race
+            console.log(imgGender)
+            console.log(imgRace)
+
+            const resources = {
+                Female_Dragonborn: 'Dragonborn.png',
+                Female_Dwarf: 'Female_Dwarf.png',
+                Default: ''
+            }
+
+            if (imgGender && imgRace) {
+                let imgLookup = resources[`${imgGender}_${imgRace}`]
+                let imgSrc = imgLookup ? imgLookup : resources.default
+                setImage("./assets/" + imgSrc)
+            }
+
+        }
+    }
+
+    useEffect(() => {
+        CharacterDisplayImage()
+    }, [])
+
     return (
         <>
             <Card id="display">
                 {CharacterDisplayCurrent()}
+                {/* {CharacterDisplayImage()} */}
+                {isLoaded ? <img src={image}/> : ""}
+                {/* <img src={image} /> */}
             </Card>
         </>
     )
@@ -36,7 +71,20 @@ export default CharacterDisplay
 
 
 
+// switch (imgGender || imgRace) {
+            //     case gender.female && race.A:
+            //         setImage(Dragonborn)
+            //         console.log(image)
+            //         break;
+            //     default: 
+            //     setImage(Dragonborn)
+            // }
 
+
+
+// let gender = { female: 'female', male: 'male', nonbinary: 'nonbinary' }
+
+        // let race = { A: 'dragonborn', B: 'dwarf', C: 'elf', D: 'gnome', E: 'half-elf', F: 'halfling', G: 'half-orc', H: 'human', I: 'tiefling' }
 
 
 
