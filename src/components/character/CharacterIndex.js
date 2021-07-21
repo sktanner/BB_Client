@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Grid from '@material-ui/core/Grid';
+import {
+    Grid,
+    Button
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import CharacterTable from './CharacterTable'
@@ -22,6 +25,7 @@ const CharacterIndex = (props) => {
     const [character, setCharacter] = useState([])
     const [updateActive, setUpdateActive] = useState(false)
     const [characterToUpdate, setCharacterToUpdate] = useState([])
+    const [view, setView] = useState(true)
 
     const fetchCharacters = () => {
         fetch('http://localhost:3000/character/', {
@@ -54,34 +58,40 @@ const CharacterIndex = (props) => {
         fetchCharacters()
     }, [])
 
+    const changeView = () => { setView(!view) }
+
     return (
         <>
-        <div id="container">
-            <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
+            <div id="container">
+                <CharacterCreate fetchCharacters={fetchCharacters} token={props.token} />
 
-            <CharacterDisplay character={character} />
-        </div>
-            <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
+                <CharacterDisplay character={character} />
+            </div>
+            <Button variant="contained" onClick={changeView}>
+                Switch to Table View
+            </Button>
+            {view === true
+                ?
+                <Grid container spacing={4} className={classes.gridContainer} >
+                    <Grid item xs={12} sm={6} md={4}>
+                        <CharacterCard />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <CharacterCard />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <CharacterCard />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <CharacterCard />
+                    </Grid>
+                </Grid>
+                :
+                <CharacterTable character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} />
+            }
 
             {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
 
-            <br />
-            
-
-        <Grid container spacing={4} className={classes.gridContainer} >
-                <Grid item xs={12} sm={6} md={4}>
-                    <CharacterCard />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <CharacterCard />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <CharacterCard />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <CharacterCard />
-                </Grid>
-            </Grid>
         </>
     )
 }
