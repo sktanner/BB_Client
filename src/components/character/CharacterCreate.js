@@ -14,6 +14,7 @@ import { Button, Form, FormGroup, Label, Input, Container, Col } from 'reactstra
 //     MenuItem
 // } from '@material-ui/core';
 import Name from './Name';
+import RandChar from './RandChar';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
   <TextField id="standard-basic" label="Standard" />
@@ -32,6 +33,12 @@ const CharacterCreate = (props) => {
     const [alignment, setAlignment] = useState('')
     const [profession, setProfession] = useState('')
     const [trait, setTrait] = useState('')
+    //Randomizer props
+    // const [randRace, setRandRace] = useState('')
+    // const [randGender, setRandGender] = useState('')
+    // const [randAge, setRandAge] = useState('')
+    // const [randAlignment, setRandAlignment] = useState('')
+
 
     // const useStyles = makeStyles(() => ({
     //     root: {
@@ -90,6 +97,9 @@ const CharacterCreate = (props) => {
                 <FormGroup row>
                     <Name randName =  {randName} setRandName = {setRandName} />
                 </FormGroup>
+                {/* <FormGroup row>
+                    <RandChar />
+                </FormGroup> */}
                 <FormGroup row>
                     <Label htmlFor="name" sm={4}>Name:</Label>
                     <Col sm={8}>
