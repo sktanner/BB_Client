@@ -4,14 +4,14 @@ import { useState } from 'react';
 
 const Name = (props) => {
 
-    const [randName, setRandName] = useState();
+    // const [randName, setRandName] = useState('');
 
     const fetcher = () => {
         fetch('https://api.randomuser.me/')
             .then(res => res.json())
             .then(json => {
-                setRandName(json);
-                console.log(json);
+                props.setRandName(json.results[0].name.first);
+                // console.log(json);
             })
             .catch(err => console.log(err))
     }
@@ -21,7 +21,8 @@ const Name = (props) => {
             <div class="text-center">
                 <Button type="submit" id="submit" onClick={fetcher}>Random Name</Button>
             </div>
-            {console.log(randName.results[0].name.first)}
+            {/* {console.log(randName.results[0].name.first)} */}
+            {/* {props.randName} */}
         </div>
     )
 }
