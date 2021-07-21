@@ -9,7 +9,7 @@ import CharacterTable from './CharacterTable'
 import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
 import CharacterCard from './Card'
-import CharacterDisplay from './Character';
+import CharacterDisplay from './CharacterDisplay';
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({

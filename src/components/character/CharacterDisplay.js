@@ -42,16 +42,20 @@ const CharacterDisplay = (props) => {
 
             if (imgGender && imgRace) {
                 let imgLookup = resources[`${imgGender}_${imgRace}`]
-                let imgSrc = imgLookup ? imgLookup : resources.default
+                let imgSrc = imgLookup ? imgLookup : resources.Default
                 setImage("./assets/" + imgSrc)
             }
 
         }
     }
 
+    // added characterDisplayImage & characterDisplayCurrent to useEffect so it runs on component mount.
+    // added characterDisplayImage to [] so it runs again on update.
     useEffect(() => {
         CharacterDisplayImage()
-    }, [])
+        CharacterDisplayCurrent()
+    }, [CharacterDisplayImage])
+
 
     return (
         <>
