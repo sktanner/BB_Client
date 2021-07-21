@@ -94,16 +94,16 @@ const CharacterCreate = (props) => {
             <h3 id="createTitle">Create a Character</h3>
             <hr />
             <Form onSubmit={handleSubmit}>
-                <FormGroup row>
+                {/* <FormGroup row>
                     <Name randName =  {randName} setRandName = {setRandName} />
-                </FormGroup>
+                </FormGroup> */}
                 {/* <FormGroup row>
                     <RandChar />
                 </FormGroup> */}
                 <FormGroup row>
                     <Label htmlFor="name" sm={4}>Name:</Label>
                     <Col sm={8}>
-                        <Input name="name" placeholder="Name" value={randName} onChange={(e) => setRandName(e.target.value)} />
+                        <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>

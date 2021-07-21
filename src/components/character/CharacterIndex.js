@@ -78,6 +78,7 @@ const CharacterIndex = (props) => {
             <Button variant="contained" onClick={changeView}>
                 {toggleBtnMsg}
             </Button>
+            <br />
             {view === true
                 ?
                 <Grid container spacing={4} className={classes.gridContainer} >

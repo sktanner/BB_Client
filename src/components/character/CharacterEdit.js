@@ -58,9 +58,9 @@ const CharacterEdit = (props) => {
                             <option value="Dwarf">Dwarf</option>
                             <option value="Elf">Elf</option>
                             <option value="Gnome">Gnome</option>
-                            <option value="Half-Elf">Half-Elf</option>
+                            <option value="HalfElf">Half-Elf</option>
                             <option value="Halfling">Halfling</option>
-                            <option value="Half-Orc">Half-Orc</option>
+                            <option value="HalfOrc">Half-Orc</option>
                             <option value="Human">Human</option>
                             <option value="Tiefling">Tiefling</option>
                         </Input>
