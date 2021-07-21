@@ -23,6 +23,7 @@ import Name from './Name';
 
 
 const CharacterCreate = (props) => {
+    const [randName, setRandName] = useState('')
     const [name, setName] = useState('')
     const [location, setLocation] = useState('')
     const [race, setRace] = useState('')
@@ -86,13 +87,13 @@ const CharacterCreate = (props) => {
             <h3 id="createTitle">Create a Character</h3>
             <hr />
             <Form onSubmit={handleSubmit}>
-                {/* <FormGroup row>
-                    <Name />
-                </FormGroup> */}
+                <FormGroup row>
+                    <Name randName =  {randName} setRandName = {setRandName} />
+                </FormGroup>
                 <FormGroup row>
                     <Label htmlFor="name" sm={4}>Name:</Label>
                     <Col sm={8}>
-                        <Input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <Input name="name" placeholder="Name" value={randName} onChange={(e) => setRandName(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
