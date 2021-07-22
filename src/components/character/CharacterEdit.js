@@ -13,6 +13,7 @@ const CharacterEdit = (props) => {
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
+   
 
     const CharacterUpdate = (event, character) => {
         event.preventDefault()

@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core';
+import { Button } from 'reactstrap';
 import React from 'react';
 import { useState } from 'react';
 
@@ -18,9 +18,10 @@ const Name = (props) => {
 
     return (
         <div>
-            <div>
-                <Button type="submit" id="submit" onClick={fetcher}>Random Name</Button>
+            <div class="text-center">
+                <Button type="submit" color="danger" onClick={fetcher}>Random Name</Button>
             </div>
+            <br />
             {/* {console.log(randName.results[0].name.first)} */}
             {/* {props.randName} */}
         </div>
