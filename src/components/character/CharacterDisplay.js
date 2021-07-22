@@ -14,7 +14,7 @@ const CharacterDisplay = (props) => {
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].gender}, {props.character[charLength - 1].age} {props.character[charLength - 1].race}.</p>
                     <p>{props.character[charLength - 1].name} is located in {props.character[charLength - 1].location}, and their alignment is {props.character[charLength - 1].alignment}.</p>
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].profession} and is {props.character[charLength - 1].trait}.</p>
-                    <ul>
+                    {/* <ul>
                         <li>{props.character[charLength - 1].name}</li>
                         <li>{props.character[charLength - 1].location}</li>
                         <li>{props.character[charLength - 1].race}</li>
@@ -23,7 +23,7 @@ const CharacterDisplay = (props) => {
                         <li>{props.character[charLength - 1].alignment}</li>
                         <li>{props.character[charLength - 1].profession}</li>
                         <li>{props.character[charLength - 1].trait}</li>
-                    </ul>
+                    </ul> */}
                 </div>
             )
         }
