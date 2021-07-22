@@ -1,11 +1,49 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: black;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+#createTable {
+  background-color: white;
+  color: black;
+  width: 400px;
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  margin-right: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: .25rem;
+}
+
+#createTitle {
+  text-align: center;
+}
+
+#charTable {
+  background-color: white;
+  max-width: 500px;
+  border-radius: .25rem;
+}
+
+#display {
+  color: black;
+  list-style: none;
+}
+
+#image {
+  height: 400px;
 }
