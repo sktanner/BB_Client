@@ -19,7 +19,7 @@ const Name = (props) => {
     return (
         <div>
             <div class="text-center">
-                <Button type="submit" color="danger" onClick={fetcher}>Random Name</Button>
+                <Button color="danger" onClick={fetcher}>Random Name</Button>
             </div>
             <br />
             {/* {console.log(randName.results[0].name.first)} */}
