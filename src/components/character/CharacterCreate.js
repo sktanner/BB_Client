@@ -94,9 +94,9 @@ const CharacterCreate = (props) => {
             <h3 id="createTitle">Create a Character</h3>
             <hr />
             <Form onSubmit={handleSubmit}>
-                {/* <FormGroup row>
-                    <Name randName =  {randName} setRandName = {setRandName} />
-                </FormGroup> */}
+                <FormGroup row>
+                    <Name name =  {name} setName = {setName} />
+                </FormGroup>
                 {/* <FormGroup row>
                     <RandChar />
                 </FormGroup> */}
