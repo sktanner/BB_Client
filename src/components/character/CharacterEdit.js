@@ -10,6 +10,9 @@ const CharacterEdit = (props) => {
     const [editAlignment, setEditAlignment] = useState(props.characterToUpdate.alignment)
     const [editProfession, setEditProfession] = useState(props.characterToUpdate.profession)
     const [editTrait, setEditTrait] = useState(props.characterToUpdate.trait)
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
 
     const CharacterUpdate = (event, character) => {
         event.preventDefault()
@@ -107,7 +110,8 @@ const CharacterEdit = (props) => {
                         <Label htmlFor="trait">Edit Trait:</Label>
                             <Input name="trait" placeholder="Trait" value={editTrait} onChange={(e) => setEditTrait(e.target.value)} />
                     </FormGroup>
-                    <Button type="submit" color="warning">Update</Button>
+                    <Button type="submit" color="warning">Edit</Button>
+                    <Button color="danger" onClick={toggle}>Cancel</Button>
                 </Form>
             </ModalBody>
         </Modal>
