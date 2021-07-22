@@ -104,7 +104,44 @@ const CharacterEdit = (props) => {
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="profession">Edit Profession:</Label>
-                            <Input name="profession" placeholder="Profession" value={editProfession} onChange={(e) => setEditProfession(e.target.value)} />
+                        <Input type="select" name="profession" value={editProfession} onChange={(e) => setEditProfession(e.target.value)}>
+                            <option></option>
+                            <option value='Barbarian'>Barbarian</option>
+                            <option value='Bard'>Bard</option>
+                            <option value='Cleric'>Cleric</option>
+                            <option value='Druid'>Druid</option>
+                            <option value='Fighter'>Fighter</option>
+                            <option value='Monk'>Monk</option>
+                            <option value='Paladin'>Paladin</option>
+                            <option value='Ranger'>Ranger</option>
+                            <option value='Rogue'>Rogue</option>
+                            <option value='Sorcerer'>Sorcerer</option>
+                            <option value='Warlock'>Warlock</option>
+                            <option value='Wizard'>Wizard</option>
+                            <option value='Acolyte'>Acolyte</option>
+                            <option value='Baker'>Baker</option>
+                            <option value='Bandit'>Bandit</option>
+                            <option value='Beggar'>Beggar</option>
+                            <option value='Blacksmith'>Blacksmith</option>
+                            <option value='Bounty Hunter'>Bounty Hunter</option>
+                            <option value='Cook'>Cook</option>
+                            <option value='Entertainer'>Entertainer</option>
+                            <option value='Explorer'>Explorer</option>
+                            <option value='Farmer'>Farmer</option>
+                            <option value='Fisherman'>Fisherman</option>
+                            <option value='Gravedigger'>Gravedigger</option>
+                            <option value='Hermit'>Hermit</option>
+                            <option value='Historian'>Historian</option>
+                            <option value='Innkeeper'>Innkeeper</option>
+                            <option value='Knight'>Knight</option>
+                            <option value='Medic'>Medic</option>
+                            <option value='Merchant'>Merchant</option>
+                            <option value='Musician'>Musician</option>
+                            <option value='Sailor'>Sailor</option>
+                            <option value='Smuggler'>Smuggler</option>
+                            <option value='Soldier'>Soldier</option>
+                            <option value='Squire'>Squire</option>
+                        </Input>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="trait">Edit Trait:</Label>
