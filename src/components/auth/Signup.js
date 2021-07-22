@@ -14,12 +14,27 @@ const Signup = (props) => {
         root: {
             marginBottom: '10px',
         },
+        title: {
+            fontWeight: 'bold',
+        },
         button: {
             marginTop: '10px',
+            backgroundColor: 'black',
+            color: 'rgba(230,1,10,1)',
+            '&:hover': {
+                backgroundColor: 'rgba(230,1,10,1)',
+                color: 'black',
+            },
         },
         confirm: {
             backgroundColor: "#282c34",
             color: "rgba(230,1,10,0.9)",
+        },
+        link: {
+            '&:hover': {
+                color: 'black',
+                fontWeight: 'bold',
+            },
         }
     }))
 
@@ -45,7 +60,7 @@ const Signup = (props) => {
 
     return (
         <div>
-            <Typography variant="h4">Sign Up</Typography>
+            <Typography className={classes.title} variant="h4">Sign Up</Typography>
             <form onSubmit={(e) => {
                 if (props.password === cPassword) {
                     handleSubmit(e);
@@ -80,7 +95,7 @@ const Signup = (props) => {
                 </Typography>
                 <Button type="submit" className={classes.button} variant="contained">Sign Up</Button>
                 <br />
-                <Link href="#" color="inherit" variant="body2" onClick={props.togglePortal}>Already have an account?</Link>
+                <Link className={classes.link} href="#" color="inherit" variant="body2" onClick={props.togglePortal}>Already have an account?</Link>
             </form>
         </div >
     )

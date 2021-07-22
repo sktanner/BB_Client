@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+// import Loading from './components/navigation/Loading';
 import Navbar from './components/navigation/Navbar';
 import Portal from './components/auth/Portal';
 
@@ -12,6 +13,11 @@ import CharacterIndex from './components/character/CharacterIndex';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   setTimeout(() => setLoading(false), 3000)
+  // }, [])
 
   useEffect(() => {
 
@@ -39,6 +45,8 @@ function App() {
     <div className="App">
       <Navbar clickLogout={clearToken} token={sessionToken} />
       {protectedView()}
+      {/* <Loading /> */}
+
 
     </div>
   );

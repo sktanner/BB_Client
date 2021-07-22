@@ -21,6 +21,7 @@ const Portal = (props) => {
             backgroundColor: "rgba(230,1,10,0.9)",
             borderRadius: "1rem",
             minHeight: "60vh",
+            color: "black",
         },
     }))
 
