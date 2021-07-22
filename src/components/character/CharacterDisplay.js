@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react'
-import { Card, CardImg } from 'reactstrap'
+import { Card, CardImg, Row, Col } from 'reactstrap'
 import { useState } from 'react'
 
 const CharacterDisplay = (props) => {
@@ -10,16 +10,21 @@ const CharacterDisplay = (props) => {
         let charLength = props.character.length
         if (charLength != 0) {
             return (
-                <ul>
-                    <li>{props.character[charLength - 1].name}</li>
-                    <li>{props.character[charLength - 1].location}</li>
-                    <li>{props.character[charLength - 1].race}</li>
-                    <li>{props.character[charLength - 1].gender}</li>
-                    <li>{props.character[charLength - 1].age}</li>
-                    <li>{props.character[charLength - 1].alignment}</li>
-                    <li>{props.character[charLength - 1].profession}</li>
-                    <li>{props.character[charLength - 1].trait}</li>
-                </ul>
+                <div>
+                    <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].gender}, {props.character[charLength - 1].age} {props.character[charLength - 1].race}.</p>
+                    <p>{props.character[charLength - 1].name} is located in {props.character[charLength - 1].location}, and they're alignment is {props.character[charLength - 1].alignment}.</p>
+                    <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].profession} and is {props.character[charLength - 1].trait}.</p>
+                    <ul>
+                        <li>{props.character[charLength - 1].name}</li>
+                        <li>{props.character[charLength - 1].location}</li>
+                        <li>{props.character[charLength - 1].race}</li>
+                        <li>{props.character[charLength - 1].gender}</li>
+                        <li>{props.character[charLength - 1].age}</li>
+                        <li>{props.character[charLength - 1].alignment}</li>
+                        <li>{props.character[charLength - 1].profession}</li>
+                        <li>{props.character[charLength - 1].trait}</li>
+                    </ul>
+                </div>
             )
         }
     }
@@ -74,14 +79,12 @@ const CharacterDisplay = (props) => {
 
 
     return (
-        <>
-            <Card id="display">
-                {CharacterDisplayCurrent()}
-                {isLoaded ? <img src={image} id="image"/> : ""}
-                {/* {CharacterDisplayImage()} */}
-                {/* <img src={image} /> */}
-            </Card>
-        </>
+        <Card id="display">
+            {CharacterDisplayCurrent()}
+            {isLoaded ? <img src={image} id="image" /> : ""}
+            {/* {CharacterDisplayImage()} */}
+            {/* <img src={image} /> */}
+        </Card>
     )
 
 }

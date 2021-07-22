@@ -26,7 +26,7 @@ const CharacterTable = (props) => {
                     <td>{character.profession}</td>
                     <td>{character.trait}</td>
                     <td>
-                        <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Update</Button>
+                        <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Edit</Button>
                         
                     </td>
                     <td>
