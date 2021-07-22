@@ -39,7 +39,7 @@ const CharacterTable = (props) => {
 
   return(
     <>
-    <Table id="charTable">
+    <Table hover id="charTable">
         <thead>
             <tr>
                 <th>Name</th>
