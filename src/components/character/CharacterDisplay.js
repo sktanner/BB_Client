@@ -12,7 +12,7 @@ const CharacterDisplay = (props) => {
             return (
                 <div>
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].gender}, {props.character[charLength - 1].age} {props.character[charLength - 1].race}.</p>
-                    <p>{props.character[charLength - 1].name} is located in {props.character[charLength - 1].location}, and they're alignment is {props.character[charLength - 1].alignment}.</p>
+                    <p>{props.character[charLength - 1].name} is located in {props.character[charLength - 1].location}, and their alignment is {props.character[charLength - 1].alignment}.</p>
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].profession} and is {props.character[charLength - 1].trait}.</p>
                     <ul>
                         <li>{props.character[charLength - 1].name}</li>
