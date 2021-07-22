@@ -77,7 +77,7 @@ const Signup = (props) => {
                 <br />
                 <FormControl className={classes.root}>
                     <InputLabel htmlFor="email">Email</InputLabel>
-                    <Input required name="email" value={props.email} onChange={(e) => props.setEmail(e.target.value)} />
+                    <Input required type="email" name="email" value={props.email} onChange={(e) => props.setEmail(e.target.value)} />
                 </FormControl>
                 <br />
                 <FormControl className={classes.root}>
