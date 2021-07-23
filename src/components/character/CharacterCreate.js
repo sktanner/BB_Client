@@ -75,7 +75,7 @@ const CharacterCreate = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(name, location, race, gender, age, alignment, profession, trait)
-        fetch(`${APIURL}/create`, {
+        fetch(`${APIURL}/character/create`, {
             method: 'POST',
             body: JSON.stringify({
                 character: {
