@@ -9,7 +9,7 @@ import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
 import CharacterCard from './Card'
 import CharacterDisplay from './CharacterDisplay';
-import APIURL from './helpers/environment';
+import APIURL from '../../helpers/environment';
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({

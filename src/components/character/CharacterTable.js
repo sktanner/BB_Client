@@ -1,6 +1,6 @@
 import React from 'react'
 import {Table, Button} from 'reactstrap'
-import APIURL from './helpers/environment'
+import APIURL from '../../helpers/environment'
 
 const CharacterTable = (props) => {
   const deleteCharacter = (character) => {

@@ -8,7 +8,7 @@ import {
     Typography,
     Link
 } from '@material-ui/core';
-import APIURL from '.helpers/environment';
+import APIURL from '../../helpers/environment';
 
 const Login = (props) => {
     const useStyles = makeStyles(() => ({

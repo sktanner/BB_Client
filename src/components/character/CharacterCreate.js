@@ -15,7 +15,7 @@ import { Button, Form, FormGroup, Label, Input, Container, Col } from 'reactstra
 // } from '@material-ui/core';
 import Name from './Name';
 // import RandChar from './RandChar';
-import APIURL from './helpers/environment';
+import APIURL from '../../helpers/environment';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
   <TextField id="standard-basic" label="Standard" />
