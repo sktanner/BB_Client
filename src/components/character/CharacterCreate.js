@@ -14,7 +14,8 @@ import { Button, Form, FormGroup, Label, Input, Container, Col } from 'reactstra
 //     MenuItem
 // } from '@material-ui/core';
 import Name from './Name';
-import RandChar from './RandChar';
+// import RandChar from './RandChar';
+import APIURL from './helpers/environment';
 
 {/* <form className={classes.root} noValidate autoComplete="off">
   <TextField id="standard-basic" label="Standard" />
@@ -74,7 +75,7 @@ const CharacterCreate = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(name, location, race, gender, age, alignment, profession, trait)
-        fetch('http://localhost:3000/character/create', {
+        fetch(`${APIURL}/create`, {
             method: 'POST',
             body: JSON.stringify({
                 character: {

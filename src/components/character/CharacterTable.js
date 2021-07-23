@@ -1,9 +1,10 @@
 import React from 'react'
 import {Table, Button} from 'reactstrap'
+import APIURL from './helpers/environment'
 
 const CharacterTable = (props) => {
   const deleteCharacter = (character) => {
-    fetch(`http://localhost:3000/character/${character.id}`, {
+    fetch(`${APIURL}/character/${character.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

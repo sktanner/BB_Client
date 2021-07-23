@@ -9,6 +9,7 @@ import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
 import CharacterCard from './Card'
 import CharacterDisplay from './CharacterDisplay';
+import APIURL from './helpers/environment';
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({
@@ -28,7 +29,7 @@ const CharacterIndex = (props) => {
     const [toggleBtnMsg, setToggleBtnMsg] = useState('Switch to Table View')
 
     const fetchCharacters = () => {
-        fetch('http://localhost:3000/character/', {
+        fetch(`${APIURL}/character/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
