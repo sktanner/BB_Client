@@ -10,11 +10,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
+import {Button} from 'reactstrap'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    backgroundColor: 'whitesmoke',
+    backgroundColor: 'white',
   },
   media: {
     height: 0,
@@ -34,6 +35,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CharacterCard = (props) => {
+  const deleteCharacter = (character) => {
+    fetch(`http://localhost:3000/character/${character.id}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+            })
+        }) .then(() => props.fetchCharacters())
+  }
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -55,6 +65,9 @@ const CharacterCard = (props) => {
                 image=""
               />
               <CardActions disableSpacing>
+              <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Edit</Button>
+              <div id="spacer"> </div>
+              <Button color="danger" onClick={() => {deleteCharacter(character)}}>Delete</Button>
                 <IconButton
                   className={clsx(classes.expand, {
                     [classes.expandOpen]: expanded,
