@@ -1,6 +1,5 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import { Card, CardImg, Row, Col } from 'reactstrap'
-import { useState } from 'react'
 
 const CharacterDisplay = (props) => {
     const [isLoaded, setIsLoaded] = useState()
