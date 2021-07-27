@@ -8,6 +8,7 @@ import {
     Typography,
     Link
 } from '@material-ui/core';
+import APIURL from '../../helpers/environment';
 
 const Signup = (props) => {
     const useStyles = makeStyles(() => ({
@@ -45,7 +46,7 @@ const Signup = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:3000/user/register", {
+        fetch(`${APIURL}/user/register`, {
             method: 'POST',
             body: JSON.stringify({ user: { username: props.username, email: props.email, passwordhash: props.password } }),
             headers: new Headers({

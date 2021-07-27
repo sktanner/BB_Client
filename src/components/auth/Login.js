@@ -8,6 +8,7 @@ import {
     Typography,
     Link
 } from '@material-ui/core';
+import APIURL from '../../helpers/environment';
 
 const Login = (props) => {
     const useStyles = makeStyles(() => ({
@@ -38,7 +39,7 @@ const Login = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:3000/user/login", {
+        fetch(`${APIURL}/user/login`, {
             method: 'POST',
             body: JSON.stringify({user:{username: props.username, passwordhash: props.password}}),
             headers: new Headers({
