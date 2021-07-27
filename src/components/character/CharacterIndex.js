@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import {
-    Button
-} from '@material-ui/core';
+// import {
+//     Button
+// } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import CharacterTable from './CharacterTable'
@@ -10,6 +10,7 @@ import CharacterCreate from './CharacterCreate'
 import CharacterCard from './Card'
 import CharacterDisplay from './CharacterDisplay';
 import APIURL from '../../helpers/environment';
+import {Button} from 'reactstrap'
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({
@@ -75,14 +76,14 @@ const CharacterIndex = (props) => {
 
                 <CharacterDisplay character={character} />
             </div>
-            <Button variant="contained" onClick={changeView}>
+            <Button color="danger" variant="contained" onClick={changeView}>
                 {toggleBtnMsg}
             </Button>
             <br />
             {view === true
                 ?
     
-                 <CharacterCard character={character}/>
+                 <CharacterCard character={character} editUpdateCharacter={editUpdateCharacter} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token}/>
                 
                 
                 :
