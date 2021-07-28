@@ -80,3 +80,11 @@
 #bottomSpacer {
   height: 50px;
 }
+
+#cancel {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#edit {
+  margin-top: 10px;
+}

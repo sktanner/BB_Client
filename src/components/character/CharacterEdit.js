@@ -146,12 +146,10 @@ const CharacterEdit = (props) => {
                         <Label htmlFor="trait">Edit Trait:</Label>
                         <Input name="trait" placeholder="Trait" value={editTrait} onChange={(e) => setEditTrait(e.target.value)} />
                     </FormGroup>
+                    <Button type="submit" color="warning" id="edit">Edit</Button>
+                    <Button color="danger" id="cancel"  onClick={props.updateOff}>Cancel</Button>
                 </Form>
             </ModalBody>
-            <ModalFooter>
-                <Button type="submit" color="warning">Edit</Button>
-                <Button color="danger" onClick={props.updateOff}>Cancel</Button>
-            </ModalFooter>
         </Modal>
     )
 }
