@@ -7,6 +7,7 @@ import {
 
 import Signup from './Signup';
 import Login from './Login';
+import Introduction from './Introduction';
 
 const Portal = (props) => {
     const useStyles = makeStyles(() => ({
@@ -63,6 +64,9 @@ const Portal = (props) => {
                         updateToken={props.updateToken}
                     />
                 }
+            </Grid>
+            <Grid item xs={5} sm={3} className={classes.gridItem}>
+                <Introduction />
             </Grid>
         </Grid>
     )
