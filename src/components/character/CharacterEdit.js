@@ -43,7 +43,7 @@ const CharacterEdit = (props) => {
     }
 
     return (
-        <Modal isOpen={true}>
+        <Modal id="editModal" isOpen={true}>
             <ModalHeader>Edit a Character</ModalHeader>
             <ModalBody>
                 <Form onSubmit={CharacterUpdate}>
