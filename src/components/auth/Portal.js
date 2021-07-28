@@ -14,6 +14,7 @@ const Portal = (props) => {
         root: {
             display: "flex",
             justifyContent: "center",
+            height: "100vh",
         },
         gridItem: {
             display: "flex",
@@ -22,7 +23,9 @@ const Portal = (props) => {
             backgroundColor: "rgba(230,1,10,0.9)",
             borderRadius: "1rem",
             minHeight: "60vh",
+            maxHeight: "60vh",
             color: "black",
+            marginTop: "12em",
         },
     }))
 
@@ -65,7 +68,7 @@ const Portal = (props) => {
                     />
                 }
             </Grid>
-            <Grid item xs={5} sm={3} className={classes.gridItem}>
+            <Grid item xs={5} sm={3} id="intro" className={classes.gridItem}>
                 <Introduction />
             </Grid>
         </Grid>

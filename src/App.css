@@ -21,6 +21,10 @@
   font-weight: bolder;
 }
 
+#intro {
+  margin-left: 2em;
+}
+
 #container {
   display: flex;
   flex-direction: row;
