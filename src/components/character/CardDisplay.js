@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import { Button } from 'reactstrap'
+import APIURL from '../../helpers/environment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +40,7 @@ const CharacterCard = (props) => {
   const [image, setImage] = useState()
   const classes = useStyles()
   const [expanded, setExpanded] = useState(false)
+  const [character, setCharacter] = useState([])
 
   const resources = {
     Female_Dragonborn: 'Dragonborn_head.png',
@@ -78,31 +80,21 @@ const CharacterCard = (props) => {
 
 
   const CharacterDisplayImage = (imgGender, imgRace) => {
-    // console.log(props.character.length)
 
-    // let charLength = props.character.length
-
-    // if (charLength != 0) {
-      // setIsLoaded(true)
-    //   let imgGender = props.character.gender
-    //   let imgRace = props.character.race
-      // console.log(imgGender)
-
-      if (imgGender && imgRace) {
-        let imgLookup = resources[`${imgGender}_${imgRace}`]
-        let imgSrc = imgLookup ? imgLookup : resources.Default
-        // setImage("./assets/" + imgSrc)
-        // console.log(image)
-        return(
-          "./assets/" + imgSrc
-        )
-      }
+    if (imgGender && imgRace) {
+      let imgLookup = resources[`${imgGender}_${imgRace}`]
+      let imgSrc = imgLookup ? imgLookup : resources.Default
+      return (
+        "./assets/" + imgSrc
+      )
     }
-  
+  }
+
 
 
 
   const characterMapper = () => {
+
     return props.character.map((character) => {
       return (
         <div>
@@ -111,9 +103,6 @@ const CharacterCard = (props) => {
               <h3>{character.name}</h3>
             </CardContent>
             <CardMedia>
-              {/* className={classes.media}
-              image="" */}
-              {/* {console.log(CharacterDisplayImage(character.gender, character.race))} */}
               <img src={CharacterDisplayImage(character.gender, character.race)} id="cardImage" />
             </CardMedia>
             <CardActions disableSpacing>
@@ -135,17 +124,9 @@ const CharacterCard = (props) => {
               <CardContent>
                 <Typography paragraph>Description:</Typography>
                 <Typography Typography variant="body2" color="textSecondary" component="p">
-                <p>{character.name} is a {character.gender}, {character.age} {character.race}.</p>
-                    <p>{character.name} is located in {character.location}, and their alignment is {character.alignment}.</p>
-                    <p>{character.name} is a {character.profession} and is {character.trait}.</p>
-
-                  {/* <li>{character.location}</li>
-                  <li>{character.race}</li>
-                  <li>{character.gender}</li>
-                  <li>{character.age}</li>
-                  <li>{character.alignment}</li>
-                  <li>{character.profession}</li>
-                  <li>{character.trait}</li> */}
+                  <p>{character.name} is a {character.gender}, {character.age} {character.race}.</p>
+                  <p>{character.name} is located in {character.location}, and their alignment is {character.alignment}.</p>
+                  <p>{character.name} is a {character.profession} and is {character.trait}.</p>
                 </Typography>
               </CardContent>
             </Collapse>
@@ -154,19 +135,21 @@ const CharacterCard = (props) => {
       )
 
     }
-    )}
-
-  useEffect(() => {
-      CharacterDisplayImage()
-    }, [CharacterDisplayImage])
-
-  return (
-      <div>
-        <Grid container spacing={4} className={classes.gridContainer} justify="center">
-          {characterMapper()}
-        </Grid>
-      </div>
     )
   }
 
-  export default CharacterCard;
+  useEffect(() => {
+    CharacterDisplayImage()
+  }, [CharacterDisplayImage]
+  )
+
+  return (
+    <div>
+      <Grid container spacing={4} className={classes.gridContainer} justify="center">
+        {characterMapper()}
+      </Grid>
+    </div>
+  )
+}
+
+export default CharacterCard;

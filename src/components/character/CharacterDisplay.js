@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react'
-import { Card, CardImg, Row, Col } from 'reactstrap'
+import { Card } from 'reactstrap'
 
 const CharacterDisplay = (props) => {
     const [isLoaded, setIsLoaded] = useState()
@@ -13,16 +13,6 @@ const CharacterDisplay = (props) => {
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].gender}, {props.character[charLength - 1].age} {props.character[charLength - 1].race}.</p>
                     <p>{props.character[charLength - 1].name} is located in {props.character[charLength - 1].location}, and their alignment is {props.character[charLength - 1].alignment}.</p>
                     <p>{props.character[charLength - 1].name} is a {props.character[charLength - 1].profession} and is {props.character[charLength - 1].trait}.</p>
-                    {/* <ul>
-                        <li>{props.character[charLength - 1].name}</li>
-                        <li>{props.character[charLength - 1].location}</li>
-                        <li>{props.character[charLength - 1].race}</li>
-                        <li>{props.character[charLength - 1].gender}</li>
-                        <li>{props.character[charLength - 1].age}</li>
-                        <li>{props.character[charLength - 1].alignment}</li>
-                        <li>{props.character[charLength - 1].profession}</li>
-                        <li>{props.character[charLength - 1].trait}</li>
-                    </ul> */}
                 </div>
             )
         }
@@ -69,8 +59,6 @@ const CharacterDisplay = (props) => {
         }
     }
 
-    // added characterDisplayImage & characterDisplayCurrent to useEffect so it runs on component mount.
-    // added characterDisplayImage to [] so it runs again on update.
     useEffect(() => {
         CharacterDisplayImage()
         CharacterDisplayCurrent()
@@ -78,82 +66,15 @@ const CharacterDisplay = (props) => {
 
 
     return (
+        <>
+        {props.character.length > 0 &&
         <Card id="display">
             {CharacterDisplayCurrent()}
             {isLoaded ? <img src={image} id="image" /> : ""}
-            {/* {CharacterDisplayImage()} */}
-            {/* <img src={image} /> */}
-        </Card>
+        </Card>}
+        </>
     )
 
 }
 
 export default CharacterDisplay
-
-
-
-
-// switch (imgGender || imgRace) {
-            //     case gender.female && race.A:
-            //         setImage(Dragonborn)
-            //         console.log(image)
-            //         break;
-            //     default: 
-            //     setImage(Dragonborn)
-            // }
-
-
-
-// let gender = { female: 'female', male: 'male', nonbinary: 'nonbinary' }
-
-        // let race = { A: 'dragonborn', B: 'dwarf', C: 'elf', D: 'gnome', E: 'half-elf', F: 'halfling', G: 'half-orc', H: 'human', I: 'tiefling' }
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-
-// function character() {
-//     let  name = document.getElementById('name').value;
-//     let race = document.getElementById('race').value;
-//     let gender = document.getElementById('gender').value;
-//     let age = document.getElementById('age').value;
-//     let alignment = document.getElementById('alignment').value;
-//     let profession = document.getElementById('profession').value;
-//     let trait = document.getElementById('trait').value;
-//     //let owner = document.getElementById('owner').value;
-
-//     let newCharacter = {
-//         character: {
-//             name: name,
-//             race: race,
-//             gender: gender,
-//             age: age,
-//             alignment: alignment,
-//             profession: profession,
-//             trait: trait,
-//             //owner: owner
-//         }
-//     }
-
-//     fetch(`http://localhost:5432/create`, {
-//         method: 'POST',
-//         headers: newHeaders({
-//             "Content-Type": "application/json",
-//             "Authorization": `Bearer ${accessToken}`
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//             displayMine()
-//         })
-//         .catch(err => {
-//             console.error(err)
-//         })
-//     })
-// }
-
-// export default Character;

@@ -1,27 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, Col } from 'reactstrap'
-// import { makeStyles } from '@material-ui/core/styles'
-// import {
-//     FormControl,
-//     InputLabel,
-//     Input,
-//     Button,
-//     Typography,
-//     Link,
-//     TextField,
-//     Container,
-//     Select,
-//     MenuItem
-// } from '@material-ui/core';
 import Name from './Name';
-// import RandChar from './RandChar';
 import APIURL from '../../helpers/environment';
-
-{/* <form className={classes.root} noValidate autoComplete="off">
-  <TextField id="standard-basic" label="Standard" />
-  <TextField id="filled-basic" label="Filled" variant="filled" />
-  <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-</form> */}
 
 
 const CharacterCreate = (props) => {
@@ -51,12 +31,6 @@ const CharacterCreate = (props) => {
 
     let randomProfessions = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard', 'Acolyte', 'Baker', 'Bandit', 'Beggar', 'Blacksmith', 'Bounty Hunter', 'Cook', 'Entertainer', 'Explorer', 'Farmer', 'Fisherman', 'Gravedigger', 'Hermit', 'Historian', 'Innkeeper', 'Knight', 'Medic', 'Merchant', 'Musician', 'Sailor', 'Smuggler', 'Soldier', 'Squire']
     let randomProfession = randomProfessions[Math.floor(Math.random()*randomProfessions.length)]
-
-    //Randomizer props
-    // const [randRace, setRandRace] = useState('')
-    // const [randGender, setRandGender] = useState('')
-    // const [randAge, setRandAge] = useState('')
-    // const [randAlignment, setRandAlignment] = useState('')
 
 
     // const useStyles = makeStyles(() => ({
@@ -96,14 +70,6 @@ const CharacterCreate = (props) => {
         }).then((res) => res.json())
             .then((logData) => {
                 console.log(logData)
-                // setName('')
-                // setLocation('')
-                // setRace('')
-                // setGender('')
-                // setAge('')
-                // setAlignment('')
-                // setProfession('')
-                // setTrait('')
                 props.fetchCharacters()
             })
     }
@@ -116,9 +82,6 @@ const CharacterCreate = (props) => {
                 <FormGroup row>
                     <Name name =  {name} setName = {setName} />
                 </FormGroup>
-                {/* <FormGroup row>
-                    <RandChar />
-                </FormGroup> */}
                 <FormGroup row>
                     <Label htmlFor="name" sm={4}>Name:</Label>
                     <Col sm={8}>
@@ -247,33 +210,6 @@ const CharacterCreate = (props) => {
                 </div>
             </Form>
         </Container>
-
-
-
-
-        // <div>
-        // <h1>Create</h1>
-        // <form onSubmit={handleSubmit}>
-        //     <FormControl>
-        //         <InputLabel htmlFor="name" className={classes.root}>Name</InputLabel>
-        //         <Input className={classes.root} id="name" value={name} onChange={(e) => setName(e.target.value)} />
-        //     </FormControl>
-        //     <FormControl>
-        //         <InputLabel htmlFor="location" className={classes.root}>Location</InputLabel>
-        //         <Input className={classes.root} id="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-        //     </FormControl>
-        //     <FormControl>
-        //         <InputLabel htmlFor="race" className={classes.root}>Race</InputLabel>
-        //         <Select className={classes.root} id="race" value={races} onChange={(e) => setRace(e.target.value)} />
-        //         <MenuItem value={Dwarf}>Dwarf</MenuItem>
-        //         <MenuItem value={Elf}>Elf</MenuItem>
-        //         <MenuItem value={Human}>Human</MenuItem>
-        //     </FormControl>
-        //     <Button type="submit" className={classes.button} variant="contained">Submit</Button>
-        //     <br />
-        //     <Name />
-        //     </form>
-        // </div>
     )
 }
 

@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react'
-// import {
-//     Button
-// } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import CharacterTable from './CharacterTable'
-import CharacterEdit from './CharacterEdit'
 import CharacterCreate from './CharacterCreate'
-import CharacterCard from './Card'
 import CharacterDisplay from './CharacterDisplay';
 import APIURL from '../../helpers/environment';
-import {Button} from 'reactstrap'
 
 const CharacterIndex = (props) => {
     const useStyles = makeStyles({
@@ -26,8 +19,8 @@ const CharacterIndex = (props) => {
     const [character, setCharacter] = useState([])
     const [updateActive, setUpdateActive] = useState(false)
     const [characterToUpdate, setCharacterToUpdate] = useState([])
-    const [view, setView] = useState(true)
-    const [toggleBtnMsg, setToggleBtnMsg] = useState('Switch to Table View')
+    // const [view, setView] = useState(true)
+    // const [toggleBtnMsg, setToggleBtnMsg] = useState('Switch to Table View')
 
     const fetchCharacters = () => {
         fetch(`${APIURL}/character/`, {
@@ -56,18 +49,18 @@ const CharacterIndex = (props) => {
         setUpdateActive(false)
     }
 
-    useEffect(() => {
-        fetchCharacters()
-    }, [])
+    // useEffect(() => {
+    //     fetchCharacters()
+    // }, [])
 
-    const changeView = () => { 
-        setView(!view);
-        if (view === false) {
-            setToggleBtnMsg('Switch to Table View')
-        } else {
-            setToggleBtnMsg('Switch to Card View')
-        }
-    }
+    // const changeView = () => { 
+    //     setView(!view);
+    //     if (view === false) {
+    //         setToggleBtnMsg('Switch to Table View')
+    //     } else {
+    //         setToggleBtnMsg('Switch to Card View')
+    //     }
+    // }
 
     return (
         <>
@@ -76,7 +69,7 @@ const CharacterIndex = (props) => {
 
                 <CharacterDisplay character={character} />
             </div>
-            <Button color="danger" variant="contained" onClick={changeView}>
+            {/* <Button color="danger" variant="contained" onClick={changeView}>
                 {toggleBtnMsg}
             </Button>
             <br />
@@ -91,7 +84,7 @@ const CharacterIndex = (props) => {
             }
 
             {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters} /> : <></>}
-            <div id="bottomSpacer"></div>
+            <div id="bottomSpacer"></div> */}
 
         </>
     )
